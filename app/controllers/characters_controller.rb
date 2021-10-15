@@ -16,7 +16,14 @@ class CharactersController < ApplicationController
         rescue ActiveRecord::RecordInvalid => invalid
             render json: { errors: invalid.record.errors.full_messages }, status: :unprocessable_entity
         end 
-    
+
+        def destroy
+            
+        end 
+
+        def update
+
+        end 
         private
     
         def character_params
