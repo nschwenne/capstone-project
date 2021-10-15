@@ -1,13 +1,7 @@
-
-
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        
-      </header>
-    </div>
-  );
+return (
+<h1>Noice</h1>
+)
 }
 
 export default App;
