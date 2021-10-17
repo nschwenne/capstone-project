@@ -14,7 +14,7 @@ function NavBar({ user, setUser }) {
       return (
           <div>
               <div>
-              <link to="/">Character App</link>
+              <Link to="/">Character App</Link>
               </div>
               <div>
                   <button as={Link} to="/new">New Character</button>
