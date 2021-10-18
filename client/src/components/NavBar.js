@@ -17,7 +17,7 @@ function NavBar({ user, setUser }) {
               <Link to="/">Character App</Link>
               </div>
               <div>
-                  <button as={Link} to="/new">New Character</button>
+                  <Link to="/new">New Character</Link>
                   <button onClick={handleLogout}>Logout</button>
               </div>
           </div>
