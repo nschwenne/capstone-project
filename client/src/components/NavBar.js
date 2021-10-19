@@ -11,6 +11,15 @@ function NavBar({ user, setUser }) {
         });
       }
 
+     function handleDelete() {
+       fetch("/users", {
+         method: "DELETE",
+       })
+       .then((r) => r.json())
+       window.location.reload()
+     }
+       
+      
       return (
           <div>
               <div>
@@ -19,6 +28,7 @@ function NavBar({ user, setUser }) {
               <div>
                   <Link to="/new">New Character</Link>
                   <button onClick={handleLogout}>Logout</button>
+                  <button onClick={handleDelete}>Delete Account</button>
               </div>
           </div>
       )

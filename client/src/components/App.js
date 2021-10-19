@@ -3,6 +3,7 @@ import { Switch, Route, BrowserRouter } from "react-router-dom"
 import NavBar from "./NavBar";
 import Login from "../pages/Login";
 import NewCharacter from "../pages/NewCharacter";
+import CharacterList from "../pages/CharacterList";
 
 
 function App() {
@@ -25,7 +26,7 @@ return (
         <NewCharacter user={user}/>
         </Route>
         <Route path="/">
-        
+            <CharacterList/>
         </Route>
 
     </Switch>

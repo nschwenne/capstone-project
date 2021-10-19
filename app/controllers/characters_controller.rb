@@ -1,16 +1,15 @@
 class CharactersController < ApplicationController
     before_action :authorize
       
-    
-    
+
         def index
-            characters = Characters.all
+            characters = Character.all
             render json: characters, include: :user   
         end
     
         def create
             user = User.find_by(id: session[:user_id])
-            character = user.character.create!(character_params)
+            character = user.characters.create!(character_params)
             render json: character, status: :created, include: :user
         
         rescue ActiveRecord::RecordInvalid => invalid

@@ -57,11 +57,7 @@ function NewCharacter({ user }) {
               id="level"
               value={level}
               onChange={(e) => setLevel(e.target.value)}/>
-              <button type="submit">{isLoading ? "Loading..." : "Submit Character!"}</button>
-      
-      {errors.map((err) => (
-        <error key={err}>{err}</error>
-      ))}
+              <button type="submit">Create Character!</button>
           </form>
       </div>
   )

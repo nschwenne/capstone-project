@@ -19,7 +19,11 @@ class UsersController < ApplicationController
       end
     end 
 
-    
+    def destroy 
+      user = User.find_by(id:session[:user_id])
+      user.delete
+      head :no_content
+    end 
 
     private
   
