@@ -8,6 +8,7 @@ class CharactersController < ApplicationController
         end
     
         def create
+        
             user = User.find_by(id: session[:user_id])
             character = user.characters.create!(character_params)
             render json: character, status: :created, include: :user

@@ -20,7 +20,7 @@ function NewCharacter({ user }) {
       body: JSON.stringify({
         name,
         klass,
-       level,
+        level,
       }),
     }).then((r) => {
       setIsLoading(false);
