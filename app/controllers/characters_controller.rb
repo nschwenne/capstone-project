@@ -18,12 +18,18 @@ class CharactersController < ApplicationController
         end 
 
         def destroy
-            
+            character = Character.find_by(id: params[:id])
+            character.destroy
+            head :no_content
         end 
 
         def update
-
+            character = Character.find_by(id: params[:id])
+            character.update(character_params)
+            render json: character
         end 
+
+        
         private
     
         def character_params

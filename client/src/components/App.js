@@ -4,6 +4,7 @@ import NavBar from "./NavBar";
 import Login from "../pages/Login";
 import NewCharacter from "../pages/NewCharacter";
 import CharacterList from "../pages/CharacterList";
+import UpdateCharacter from "./UpdateCharacter";
 
 
 function App() {
@@ -25,9 +26,13 @@ return (
         <Route path='/new'>
         <NewCharacter user={user}/>
         </Route>
+        <Route path='/update'>
+            <UpdateCharacter />
+        </Route>
         <Route path="/">
             <CharacterList/>
         </Route>
+       
 
     </Switch>
     </BrowserRouter>
