@@ -22,12 +22,17 @@ function NavBar({ user, setUser }) {
       
       return (
           <div>
+            <h1>Welcome {user.username}!</h1>
+            <h2>Character App</h2>
+            
               <div>
-              <Link to="/">Character App</Link>
-              </div>
-              <div>
+                <Link to="/">Character List</Link>
+                &nbsp;&nbsp;&nbsp;
                   <Link to="/new">New Character</Link>
+                  <br></br>
+                  <br></br>
                   <button onClick={handleLogout}>Logout</button>
+                  &nbsp;&nbsp;&nbsp;
                   <button onClick={handleDelete}>Delete Account</button>
               </div>
           </div>
