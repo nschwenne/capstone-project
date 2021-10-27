@@ -3,7 +3,8 @@ class CharactersController < ApplicationController
       
 
         def index
-            characters = Character.all
+            user = User.find_by(id: session[:user_id])
+            characters = user.characters
             render json: characters, include: :user   
         end
     

@@ -1,9 +1,10 @@
-body {
-  margin: 0;
+*{
+  text-align: center;
   font-family: copperplate;
   color: maroon;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-size: 20px;
+  scroll-behavior: smooth;
+  
 }
 
 code {
@@ -11,3 +12,41 @@ code {
     monospace;
 }
 
+button{
+  font-size: 20px;
+  justify-content: center;
+  text-align: center;
+  font-family: copperplate;
+  color: maroon;
+  background-color: darkgoldenrod;
+  border: 2px solid silver;
+}
+
+Link {
+  color: maroon;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  font-size: 20px;
+  background-color: black;
+  justify-content: space-between;
+  
+}
+
+nav a:hover,
+nav a:active {
+  color: maroon;
+  border-bottom: 2px solid maroon;
+}
+nav a.active {
+  color: ghostwhite;
+  background: maroon;
+}
+
+h1{
+  font-size: 50px;
+}

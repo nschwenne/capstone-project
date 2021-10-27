@@ -35,7 +35,7 @@ function NewCharacter({ user }) {
 
   return (
       <div>
-          <h1>Create Character</h1>
+          <h2>Create Character</h2>
           <form onSubmit={handleSubmit}>
               <label htmlFor="name">Name: </label>
               <input 
@@ -57,6 +57,7 @@ function NewCharacter({ user }) {
               id="level"
               value={level}
               onChange={(e) => setLevel(e.target.value)}/>
+              <br></br>
               <button type="submit">Create Character!</button>
           </form>
       </div>

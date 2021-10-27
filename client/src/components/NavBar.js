@@ -22,10 +22,7 @@ function NavBar({ user, setUser }) {
       
       return (
           <div>
-            <h1>Welcome {user.username}!</h1>
-            <h2>Character App</h2>
-            
-              <div>
+              <nav>
                 <Link to="/">Character List</Link>
                 &nbsp;&nbsp;&nbsp;
                   <Link to="/new">New Character</Link>
@@ -34,7 +31,11 @@ function NavBar({ user, setUser }) {
                   <button onClick={handleLogout}>Logout</button>
                   &nbsp;&nbsp;&nbsp;
                   <button onClick={handleDelete}>Delete Account</button>
-              </div>
+              </nav>
+          <div>
+            <br></br>
+          <h1 class="header">Welcome {user.username}!</h1>
+          </div>
           </div>
       )
 }

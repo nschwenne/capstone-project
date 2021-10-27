@@ -20,7 +20,7 @@ function Login({ onLogin }) {
             </div>
             ) : (
             <div>
-                <SignUpForm />
+                <SignUpForm  onLogin={onLogin}/>
                 <p>
                     Already have an account?
                     <br></br>
