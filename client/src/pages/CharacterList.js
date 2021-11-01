@@ -20,13 +20,15 @@ function CharacterList() {
           
       }
 
-      function deleteFunction(character) {
-        fetch(("/characters/" + character.id), 
+      function deleteFunction(id) {
+        fetch(("/characters/" + id), 
         {
             method: "DELETE"
         })
-        window.location.reload()
+       const newCharArray = characters.filter((character) => character.id !==id);
+       setCharacters(newCharArray);
       }
+
       return (
           <div>
               {characters.length > 0 ? (
@@ -44,13 +46,13 @@ function CharacterList() {
                               </p>
                           </div>
                           <button onClick={() => {
-                     deleteFunction(character)
+                     deleteFunction(character.id)
                     }}>DELETE</button>  <Link to="/update" onClick={() => setData(character)}>Update</Link>
                       </div>
                   ))
               ) : (
                   <div>
-                      <h2>No Characters Found</h2>
+                      <h2>No Characters Found</h2> 
                       <Link to="/new">Create New Character!</Link>
                   </div>    
               )}

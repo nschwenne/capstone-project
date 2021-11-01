@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   delete "/users", to: "users#destroy"
 
   resources :characters
+  
+  resources :campaigns
 
 
   # Routing logic: fallback requests for React Router.

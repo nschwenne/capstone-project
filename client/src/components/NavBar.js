@@ -34,7 +34,7 @@ function NavBar({ user, setUser }) {
               </nav>
           <div>
             <br></br>
-          <h1 class="header">Welcome {user.username}!</h1>
+          <h1 className="header">Welcome {user.username}!</h1>
           </div>
           </div>
       )

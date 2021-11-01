@@ -32,8 +32,6 @@ return (
         <Route path="/">
             <CharacterList/>
         </Route>
-       
-
     </Switch>
     </BrowserRouter>
 )

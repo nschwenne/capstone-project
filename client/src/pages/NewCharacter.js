@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { useHistory } from "react-router";
 
 function NewCharacter({ user }) {
- const [name, setName] = useState();
- const [klass, setKlass] = useState();
- const [level, setLevel] = useState();
+ const [name, setName] = useState("");
+ const [klass, setKlass] = useState("");
+ const [level, setLevel] = useState("");
  const [errors, setErrors] = useState([]);
  const [isLoading, setIsLoading] = useState(false);
  const history = useHistory();
@@ -41,6 +41,7 @@ function NewCharacter({ user }) {
               <input 
               type="text"
               id="name"
+             
               value={name}
               onChange ={(e) => setName(e.target.value)}/>
               <br></br>
@@ -48,6 +49,7 @@ function NewCharacter({ user }) {
               <input 
               type="text"
               id="klass"
+              
               value={klass}
               onChange={(e) => setKlass(e.target.value)}/>
               <br></br>
@@ -55,6 +57,7 @@ function NewCharacter({ user }) {
               <input 
               type="number"
               id="level"
+    
               value={level}
               onChange={(e) => setLevel(e.target.value)}/>
               <br></br>
