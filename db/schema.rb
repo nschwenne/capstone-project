@@ -10,10 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_20_174955) do
+ActiveRecord::Schema.define(version: 2021_11_03_183224) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "campaigns", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "setting"
+    t.integer "user_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "characters", force: :cascade do |t|
     t.string "name"
@@ -22,6 +31,17 @@ ActiveRecord::Schema.define(version: 2021_10_20_174955) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
+    t.integer "campaign_id"
+    t.integer "strength"
+    t.integer "dexterity"
+    t.integer "constitution"
+    t.integer "intelligence"
+    t.integer "wisdom"
+    t.integer "charisma"
+    t.string "background"
+    t.string "race"
+    t.string "alignment"
+    t.string "experience"
   end
 
   create_table "users", force: :cascade do |t|

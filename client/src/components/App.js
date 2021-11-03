@@ -4,7 +4,8 @@ import NavBar from "./NavBar";
 import Login from "../pages/Login";
 import NewCharacter from "../pages/NewCharacter";
 import CharacterList from "../pages/CharacterList";
-import UpdateCharacter from "./UpdateCharacter";
+import Character from "./Character";
+
 
 
 function App() {
@@ -26,8 +27,8 @@ return (
         <Route path='/new'>
         <NewCharacter user={user}/>
         </Route>
-        <Route path='/update'>
-            <UpdateCharacter />
+        <Route path='/character'>
+            <Character />
         </Route>
         <Route path="/">
             <CharacterList/>

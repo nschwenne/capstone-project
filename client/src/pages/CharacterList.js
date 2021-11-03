@@ -11,15 +11,6 @@ function CharacterList() {
           .then(setCharacters);
       }, []);
 
-      function setData(character) {
-          let { id, name, klass, level } = character;
-          localStorage.setItem("ID", id)
-          localStorage.setItem("Name", name)
-          localStorage.setItem("Class", klass)
-          localStorage.setItem("Level", level)
-          
-      }
-
       function deleteFunction(id) {
         fetch(("/characters/" + id), 
         {
@@ -47,7 +38,7 @@ function CharacterList() {
                           </div>
                           <button onClick={() => {
                      deleteFunction(character.id)
-                    }}>DELETE</button>  <Link to="/update" onClick={() => setData(character)}>Update</Link>
+                    }}>DELETE</button>  <Link to="/character" charid={character.id}>View</Link>
                       </div>
                   ))
               ) : (

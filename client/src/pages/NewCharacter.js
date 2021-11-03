@@ -5,6 +5,12 @@ function NewCharacter({ user }) {
  const [name, setName] = useState("");
  const [klass, setKlass] = useState("");
  const [level, setLevel] = useState("");
+ const [strength, setStrength] = useState("")
+ const [dexterity, setDexterity] = useState("")
+ const [constitution, setConstitution] = useState("")
+ const [intelligence, setIntelligence] = useState("")
+ const [wisdom, setWisdom] = useState("")
+ const [charisma, setCharisma] = useState("")
  const [errors, setErrors] = useState([]);
  const [isLoading, setIsLoading] = useState(false);
  const history = useHistory();
