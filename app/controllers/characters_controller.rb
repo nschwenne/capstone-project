@@ -40,7 +40,21 @@ class CharactersController < ApplicationController
         private
     
         def character_params
-            params.permit(:name, :klass, :level, :id, :race, :background, :alignment, :experience)
+            params.permit(:image_url, 
+                :name, 
+                :klass, 
+                :level, 
+                :id, 
+                :race, 
+                :background, 
+                :alignment, 
+                :experience,
+                :strength,
+                :dexterity,
+                :constitution,
+                :intelligence,
+                :wisdom,
+                :charisma)
         end 
     
         def authorize
