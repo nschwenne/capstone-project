@@ -1,31 +1,126 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 
-function CharacterBackground() {
-    const [klass, setKlass] = useState();
-    const [level, setLevel] = useState();
-    const [race, setRace] = useState();
-    const [alignment, setAlignment] = useState();
-    const [background, setBackground] = useState();
-    const [experience, setExperience] = useState();
+function CharacterBackground({character}) {
+    const [background, setBackground] = useState({
+        klass: "", 
+        level: "", 
+        race: "", 
+        alignment:"", 
+        experience: "", 
+        background: ""});
+    const [id, setId] = useState("")
+
+    useEffect(() => {
+        setBackground( {
+            klass: character.klass, 
+            level: character.level, 
+            race: character.race,
+            alignment: character.alignment,
+            experience: character.experience,
+            background: character.background
+        })
+        setId(character.id)
+    }, [character])
+
+    function handleUpdate(e) {
+        e.preventDefault();
+    fetch(("/characters/" + id), 
+    {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+     klass: background.klass,
+     level: background.level,
+     race: background.race,
+     background: background.background,
+     alignment: background.alignment,
+     experience: background.experience,
+    }),
+    }).then(response => response.json())}
+
 
     return(
         <div>
-           <form>
-           <div id="char-info-1">
-                    <label htmlFor="klass">Class: </label>
+            <form>
+            <div id="char-info-1">
+            <div id="klass">
+                    <label htmlFor="klass">Class</label>
                     <input 
                     type="text"
                     id="klass"
-                    value={klass}
-                    onChange={(e) => setKlass(e.target.value)}/>
+                    value={background.klass}
+                    onChange ={(e) => setBackground({
+                        ...background, klass:(e.target.value)})
+                        }/>
+                    </div>
                     <br></br>
-                    <label htmlFor="level">Level: </label>
+                    <div id="level">
+                    <label htmlFor="level">Level</label>
                     <input 
                     type="number"
                     id="level"
-                    value={level}
-                    onChange={(e) => setLevel(e.target.value)}/>
+                    value={background.level}
+                    onChange ={(e) => setBackground({
+                        ...background, level:(e.target.value)})
+                        }/>
+                    </div>
                     <br></br>
+                    <div id="race">
+                    <label htmlFor="race">Race</label>
+                    <input 
+                    type="text"
+                    id="race"
+                    value={background.race}
+                    onChange ={(e) => setBackground({
+                        ...background, race:(e.target.value)})
+                        }/>
+                    </div>
+                    <br></br>
+                    <div id="background">
+                    <label htmlFor="background">Background</label>
+                    <input 
+                    type="text"
+                    id="background"
+                    value={background.background}
+                    onChange ={(e) => setBackground({
+                        ...background, background:(e.target.value)})
+                        }/>
+                    </div>
+                    <br></br>
+                    <div id="alignment">
+                    <label htmlFor="alignment">Alignment</label>
+                    <input 
+                    type="text"
+                    id="alignment"
+                    value={background.alignment}
+                    onChange ={(e) => setBackground({
+                        ...background, alignment:(e.target.value)})
+                        }/>
+                    </div>
+                    <br></br>
+                    <div id="experience">
+                    <label htmlFor="experience">Experience</label>
+                    <input 
+                    type="number"
+                    id="experience"
+                    value={background.experience}
+                    onChange ={(e) => setBackground({
+                        ...background, experience:(e.target.value)})
+                        }/>
+                    </div>
+                    <button onClick={handleUpdate}>save</button>
+            </div>
+            </form>
+        </div>
+    )
+}
+
+export default CharacterBackground
+
+/*
+
                     <label htmlFor="race">Race: </label>
                     <input 
                     type="text"
@@ -56,10 +151,7 @@ function CharacterBackground() {
                     value={experience}
                     onChange={(e) => setExperience(e.target.value)}/>
                     </div>
-                    
+                    <button onClick={show}></button>
            </form>
         </div>
-    )
-}
-
-export default CharacterBackground
+         */

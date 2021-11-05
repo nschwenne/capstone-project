@@ -1,16 +1,22 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom"
 
 
 function CharacterList() {
     const [characters, setCharacters] = useState([]);
 
+function setData(character) {
+    let {id} = character;
+    localStorage.setItem("ID", id);
+}
+
     useEffect(() => {
         fetch("/characters")
-          .then((r) => r.json())
-          .then(setCharacters);
+        .then((res) => res.json())
+        .then((json) => (setCharacters(json)))
       }, []);
 
+      
       function deleteFunction(id) {
         fetch(("/characters/" + id), 
         {
@@ -22,9 +28,10 @@ function CharacterList() {
 
       return (
           <div>
+              
               {characters.length > 0 ? (
                   characters.map((character) => (
-                      <div key={character.id}>
+                    <div key={character.id}>
                           <div>
                               <p>
                                   <br></br>
@@ -37,9 +44,15 @@ function CharacterList() {
                               </p>
                           </div>
                           <button onClick={() => {
-                     deleteFunction(character.id)
-                    }}>DELETE</button>  <Link to="/character" charid={character.id}>View</Link>
-                      </div>
+                            deleteFunction(character.id)
+                            }}>DELETE</button>  
+                        <Link 
+                            to='/character'
+                            onClick={() => setData(character)}
+                        >
+                            View
+                        </Link>
+                    </div>
                   ))
               ) : (
                   <div>

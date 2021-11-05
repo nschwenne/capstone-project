@@ -3,22 +3,23 @@ import { useHistory } from "react-router-dom"
 import AbilityScores from './AbilityScores';
 import CharacterBackground from './CharacterBackground';
 
-function Character(charid) {
-    const [character, setCharacter] = useState();
-    const [id, setID] = useState();
-    const [name, setName] = useState();
-    const [klass, setKlass] = useState();
-    const [level, setLevel] = useState();
-    
-    
-    
 
+function Character() {
+    const [character, setCharacter] = useState({name: ""});
+    const [id, setID] = useState("");
+ 
     useEffect(() => {
-            fetch("/characters" + {charid})
-              .then((r) => r.json())
-              .then(setCharacter);
+      setID(localStorage.getItem('ID'))
           }, []); 
-
+    
+    useEffect(() => {
+    fetch("/characters/" + id)
+    .then((res) => res.json())
+    .then((json) => {
+      setCharacter(json)
+      })
+   }, [id]); 
+   
 const history = useHistory()
 
 function handleUpdate(e) {
@@ -30,9 +31,7 @@ headers: {
   "Content-Type": "application/json",
 },
 body: JSON.stringify({
-  name,
-  klass,
-  level,
+ name: character.name
 }),
 }).then(response => response.json())
 history.goBack();
@@ -40,20 +39,20 @@ history.goBack();
 
     return(
             <div>
+              
                 <form onSubmit={handleUpdate}>
                     <div id="name">
                     <label htmlFor="name">Character Name: </label>
                     <input 
                     type="text"
                     id="name"
-                    value={name}
-                    onChange ={(e) => setName(e.target.value)}/>
+                    value={character.name}
+                    onChange ={(e) => setCharacter({...character, name:(e.target.value)})}/>
                     </div>
-                  <CharacterBackground/>
-                  <AbilityScores character={character}/>
                   <button type="submit">Save</button>
                 </form>
-                
+                <CharacterBackground character={character} />
+                <AbilityScores character={character}/>
             </div>
         )
       

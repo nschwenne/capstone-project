@@ -28,6 +28,7 @@ ActiveRecord::Schema.define(version: 2021_11_03_183224) do
     t.string "name"
     t.string "klass"
     t.integer "level"
+    t.string "image_url"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "user_id"
@@ -38,10 +39,10 @@ ActiveRecord::Schema.define(version: 2021_11_03_183224) do
     t.integer "intelligence"
     t.integer "wisdom"
     t.integer "charisma"
-    t.string "background"
-    t.string "race"
-    t.string "alignment"
-    t.string "experience"
+    t.string "background", default: ""
+    t.string "race", default: ""
+    t.string "alignment", default: ""
+    t.string "experience", default: ""
   end
 
   create_table "users", force: :cascade do |t|
