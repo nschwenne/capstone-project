@@ -25,7 +25,11 @@ function NavBar({ user, setUser }) {
               <nav>
                 <Link to="/">Character List</Link>
                 &nbsp;&nbsp;&nbsp;
-                  <Link to="/new">New Character</Link>
+                  <Link to="/newcharacter">New Character</Link>
+                  &nbsp;&nbsp;&nbsp;
+                  <Link to="/newcampaign">New Campaign</Link>
+                  &nbsp;&nbsp;&nbsp;
+                  <Link to="/campaignlist">Campaign List</Link>
                   <br></br>
                   <br></br>
                   <button onClick={handleLogout}>Logout</button>

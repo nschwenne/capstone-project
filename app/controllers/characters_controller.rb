@@ -5,7 +5,7 @@ class CharactersController < ApplicationController
         def index
             user = User.find_by(id: session[:user_id])
             characters = user.characters
-            render json: characters
+            render json: characters, except: [:created_at, :updated_at]
         end
 
         def show
@@ -46,6 +46,7 @@ class CharactersController < ApplicationController
                 :level, 
                 :id, 
                 :race, 
+                :campaign_id,
                 :background, 
                 :alignment, 
                 :experience,

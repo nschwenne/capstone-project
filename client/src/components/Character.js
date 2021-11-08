@@ -31,7 +31,8 @@ headers: {
   "Content-Type": "application/json",
 },
 body: JSON.stringify({
- name: character.name
+ name: character.name,
+ campaign: character.campaign_id
 }),
 }).then(response => response.json())
 history.goBack();
@@ -49,6 +50,7 @@ history.goBack();
                     value={character.name}
                     onChange ={(e) => setCharacter({...character, name:(e.target.value)})}/>
                     </div>
+                   
                   <button type="submit">Save</button>
                 </form>
                 <CharacterBackground character={character} />
