@@ -37,7 +37,7 @@ function setData(character) {
                                   <br></br>
                                   Name: {character.name}
                                   <br></br>
-                                  Class: {character.klass}
+                                  Campaign: {character.campaign_id}
                                   <br></br>
                                   Level: {character.level}
                                   <br></br>

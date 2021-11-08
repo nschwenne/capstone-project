@@ -3,8 +3,7 @@ import { useHistory } from "react-router";
 
 function NewCharacter({ user }) {
  const [name, setName] = useState("");
- const [klass, setKlass] = useState("");
- const [level, setLevel] = useState("");
+ const [campaign_id, setCampaign_id] = useState("");
  const [errors, setErrors] = useState([]);
  const [isLoading, setIsLoading] = useState(false);
  const history = useHistory();
@@ -19,8 +18,7 @@ function NewCharacter({ user }) {
       },
       body: JSON.stringify({
         name,
-        klass,
-        level,
+        campaign_id
       }),
     }).then((r) => {
       setIsLoading(false);
@@ -44,19 +42,13 @@ function NewCharacter({ user }) {
               value={name}
               onChange ={(e) => setName(e.target.value)}/>
               <br></br>
-              <label htmlFor="klass">Class: </label>
-              <input 
-              type="text"
-              id="klass"
-              value={klass}
-              onChange={(e) => setKlass(e.target.value)}/>
-              <br></br>
-              <label htmlFor="level">Level: </label>
+
+              <label htmlFor="campaign_id">Campaign: </label>
               <input 
               type="number"
-              id="level"
-              value={level}
-              onChange={(e) => setLevel(e.target.value)}/>
+              id="campaign_id"
+              value={campaign_id}
+              onChange={(e) => setCampaign_id(e.target.value)}/>
               <br></br>
               <button type="submit">Create Character!</button>
           </form>

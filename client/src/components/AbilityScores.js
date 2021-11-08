@@ -64,8 +64,8 @@ return (
                     id="dexterity"
                     value={abilityScores.dexterity}
                     onChange ={(e) => setAbilityScores({...abilityScores, dexterity:(e.target.value)})}
-                    score={abilityScores.dexterity}
-                    id={"dex"}
+                    
+                    
                     />
                     </div>
                     <br></br>
@@ -77,8 +77,8 @@ return (
                     id="constitution"
                     value={abilityScores.constitution}
                     onChange ={(e) => setAbilityScores({...abilityScores, constitution:(e.target.value)})}
-                    score={abilityScores.constitution}
-                    id={"con"}
+                    
+                    
                     />
                     </div>
                     <br></br>
@@ -90,8 +90,8 @@ return (
                     id="intelligence"
                     value={abilityScores.intelligence}
                     onChange ={(e) => setAbilityScores({...abilityScores, intelligence:(e.target.value)})}
-                    score={abilityScores.intelligence}
-                    id={"int"}
+                    
+                    
                     />
                     </div>
                     <br></br>
@@ -103,8 +103,8 @@ return (
                     id="wisdom"
                     value={abilityScores.wisdom}
                     onChange ={(e) => setAbilityScores({...abilityScores, wisdom:(e.target.value)})}
-                    score={abilityScores.wisdom}
-                    id={"wis"}
+                    
+                    
                     />
                     </div>
                     <br></br>
@@ -116,8 +116,8 @@ return (
                     id="charisma"
                     value={abilityScores.charisma}
                     onChange ={(e) => setAbilityScores({...abilityScores, charisma:(e.target.value)})}
-                    score={abilityScores.charisma}
-                    id={"cha"}
+                    
+                    
                     />
                     </div>
                     <br></br>

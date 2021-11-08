@@ -5,7 +5,7 @@ class CharactersController < ApplicationController
         def index
             user = User.find_by(id: session[:user_id])
             characters = user.characters
-            render json: characters, except: [:created_at, :updated_at]
+            render json: characters
         end
 
         def show
@@ -40,7 +40,8 @@ class CharactersController < ApplicationController
         private
     
         def character_params
-            params.permit(:image_url, 
+            params.permit(
+                :image_url, 
                 :name, 
                 :klass, 
                 :level, 

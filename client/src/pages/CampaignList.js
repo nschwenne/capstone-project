@@ -3,12 +3,22 @@ import { Link } from "react-router-dom"
 
 function CampaignList() {
     const [campaigns, setCampaigns] = useState([])
+    
 
     useEffect(() => {
         fetch("/campaigns")
         .then((res) => res.json())
         .then((json) => (setCampaigns(json)))
       }, []);
+
+function characters(campaign) {
+campaign.characters.map((character) => (
+  <div>
+    {character.name}
+  </div>
+))
+}
+
 
       function deleteFunction(id) {
         fetch(("/campaigns/" + id), 
@@ -32,7 +42,14 @@ function CampaignList() {
                             <br></br>
                             Setting: {campaign.setting}
                             <br></br>
-                            
+                            ID: {campaign.id}
+                            <br></br>
+                            Characters: {(campaign.characters.map((character) => (
+                              <div>
+                                {character.name}
+                              </div>
+                              
+                            )))}
                         </p>
                     </div>
                     <button onClick={() => {

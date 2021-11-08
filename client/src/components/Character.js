@@ -5,7 +5,7 @@ import CharacterBackground from './CharacterBackground';
 
 
 function Character() {
-    const [character, setCharacter] = useState({name: ""});
+    const [character, setCharacter] = useState({name: "", campaign_id: ""});
     const [id, setID] = useState("");
  
     useEffect(() => {
@@ -32,7 +32,7 @@ headers: {
 },
 body: JSON.stringify({
  name: character.name,
- campaign: character.campaign_id
+ campaign_id: character.campaign_id
 }),
 }).then(response => response.json())
 history.goBack();
@@ -49,6 +49,15 @@ history.goBack();
                     id="name"
                     value={character.name}
                     onChange ={(e) => setCharacter({...character, name:(e.target.value)})}/>
+                    </div>
+                    <br></br>
+                    <div id="campaign_id">
+                    <label htmlFor="campaign_id">Campaign: </label>
+                    <input 
+                    type="number"
+                    id="campaign_id"
+                    value={character.campaign_id}
+                    onChange ={(e) => setCharacter({...character, campaign_id:(e.target.value)})}/>
                     </div>
                    
                   <button type="submit">Save</button>
