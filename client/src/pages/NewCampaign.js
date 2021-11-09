@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { useHistory } from "react-router";
 
 function NewCampaign() {
-    const [name, setName] = useState("")
-    const [setting, setSetting] = useState("")
+    const [name, setName] = useState("");
+    const [setting, setSetting] = useState("");
+    const [id, setId] = useState("");
     const [errors, setErrors] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const history = useHistory();
@@ -18,7 +19,8 @@ function NewCampaign() {
           },
           body: JSON.stringify({
             name,
-            setting
+            setting,
+            id
           }),
         }).then((r) => {
           setIsLoading(false);
@@ -49,6 +51,13 @@ return (
         id="setting"
         value={setting}
         onChange={(e) => setSetting(e.target.value)}/>
+       <br></br>
+       <label htmlFor="id">Campaign ID: </label>
+        <input 
+        type="text"
+        id="id"
+        value={id}
+        onChange={(e) => setId(e.target.value)}/>
        <br></br>
         <button type="submit">Create Campaign!</button>
     </form>

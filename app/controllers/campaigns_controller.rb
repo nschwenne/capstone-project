@@ -40,7 +40,8 @@ class CampaignsController < ApplicationController
         params.permit(
             :name,
             :description,
-            :setting
+            :setting,
+            :id
         )
     end 
     def authorize

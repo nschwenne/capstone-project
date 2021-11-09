@@ -56,7 +56,14 @@ class CharactersController < ApplicationController
                 :constitution,
                 :intelligence,
                 :wisdom,
-                :charisma)
+                :charisma,
+                :armor_class,
+                :initiative,
+                :speed,
+                :hit_point_maximum,
+                :current_hit_points,
+                :temporary_hit_points,
+                :hit_dice)
         end 
     
         def authorize

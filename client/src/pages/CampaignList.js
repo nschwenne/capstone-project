@@ -11,13 +11,7 @@ function CampaignList() {
         .then((json) => (setCampaigns(json)))
       }, []);
 
-function characters(campaign) {
-campaign.characters.map((character) => (
-  <div>
-    {character.name}
-  </div>
-))
-}
+
 
 
       function deleteFunction(id) {

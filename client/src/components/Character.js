@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useHistory } from "react-router-dom"
 import AbilityScores from './AbilityScores';
 import CharacterBackground from './CharacterBackground';
+import CharacterInfo from './CharacterInfo';
 
 
 function Character() {
@@ -63,7 +64,8 @@ history.goBack();
                   <button type="submit">Save</button>
                 </form>
                 <CharacterBackground character={character} />
-                <AbilityScores character={character}/>
+                <AbilityScores character={character} />
+                <CharacterInfo character={character} />
             </div>
         )
       

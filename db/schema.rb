@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_03_183224) do
+ActiveRecord::Schema.define(version: 2021_11_09_173817) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,13 @@ ActiveRecord::Schema.define(version: 2021_11_03_183224) do
     t.string "race", default: ""
     t.string "alignment", default: ""
     t.string "experience", default: ""
+    t.integer "temporary_hit_points"
+    t.integer "current_hit_points"
+    t.integer "hit_point_maximum"
+    t.integer "speed"
+    t.integer "initiative"
+    t.integer "armor_class"
+    t.integer "hit_dice"
   end
 
   create_table "users", force: :cascade do |t|
