@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_09_173817) do
+ActiveRecord::Schema.define(version: 2021_11_10_202032) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,30 @@ ActiveRecord::Schema.define(version: 2021_11_09_173817) do
     t.integer "initiative"
     t.integer "armor_class"
     t.integer "hit_dice"
+    t.integer "str_saving"
+    t.integer "athletics"
+    t.integer "dex_saving"
+    t.integer "acrobatics"
+    t.integer "sleight_of_hand"
+    t.integer "stealth"
+    t.integer "con_saving"
+    t.integer "int_saving"
+    t.integer "arcana"
+    t.integer "history"
+    t.integer "investigation"
+    t.integer "nature"
+    t.integer "religion"
+    t.integer "wis_saving"
+    t.integer "animal_handling"
+    t.integer "insight"
+    t.integer "medicine"
+    t.integer "perception"
+    t.integer "survival"
+    t.integer "cha_saving"
+    t.integer "deception"
+    t.integer "intimidation"
+    t.integer "performance"
+    t.integer "persuasion"
   end
 
   create_table "users", force: :cascade do |t|

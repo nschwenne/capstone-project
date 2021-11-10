@@ -66,3 +66,7 @@ h1{
   border: 2px solid maroon;
   font-size: 35px;
 }
+
+#skillvalue {
+  font-size: 30px;
+}

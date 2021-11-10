@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom"
 import AbilityScores from './AbilityScores';
 import CharacterBackground from './CharacterBackground';
 import CharacterInfo from './CharacterInfo';
+import Skills from './Skills';
 
 
 function Character() {
@@ -66,6 +67,7 @@ history.goBack();
                 <CharacterBackground character={character} />
                 <AbilityScores character={character} />
                 <CharacterInfo character={character} />
+                <Skills character={character}/>
             </div>
         )
       

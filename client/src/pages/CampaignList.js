@@ -28,7 +28,7 @@ function CampaignList() {
               
         {campaigns.length > 0 ? (
             campaigns.map((campaign) => (
-              <div key={campaign.id}>
+              <div id={campaign.id} key={campaign.id}>
                     <div>
                         <p>
                             <br></br>

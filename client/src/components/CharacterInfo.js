@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 function CharacterInfo( {character} ) {
     const [info, setInfo] = useState({
+        level: "",
         armor_class: "", 
         initiative: "", 
         speed: "", 
@@ -13,6 +14,7 @@ function CharacterInfo( {character} ) {
 
     useEffect(() => {
         setInfo( {
+            level: character.level,
             armor_class: character.armor_class, 
             initiative: character.initiative, 
             speed: character.speed,
@@ -24,6 +26,8 @@ function CharacterInfo( {character} ) {
         setId(character.id)
     }, [character])
 
+   
+ 
 
     function handleUpdate(e) {
         e.preventDefault();

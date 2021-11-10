@@ -22,6 +22,13 @@ function CharacterBackground({character}) {
         setId(character.id)
     }, [character])
 
+    const proficiency = Math.ceil((character.level/4)+1)
+
+    useEffect(() => {
+       document.getElementById(`prof`).innerHTML = proficiency
+    }, [character.level])
+
+
     function handleUpdate(e) {
         e.preventDefault();
     fetch(("/characters/" + id), 
@@ -43,6 +50,10 @@ function CharacterBackground({character}) {
 
     return(
         <div>
+            <p>proficiency</p>
+            <p id="prof">
+        
+            </p>
             <form>
             <div id="char-info-1">
             <div id="klass">

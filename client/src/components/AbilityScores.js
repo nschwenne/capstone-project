@@ -64,8 +64,6 @@ return (
                     id="dexterity"
                     value={abilityScores.dexterity}
                     onChange ={(e) => setAbilityScores({...abilityScores, dexterity:(e.target.value)})}
-                    
-                    
                     />
                     </div>
                     <br></br>

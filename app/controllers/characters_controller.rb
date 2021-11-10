@@ -5,7 +5,7 @@ class CharactersController < ApplicationController
         def index
             user = User.find_by(id: session[:user_id])
             characters = user.characters
-            render json: characters
+            render json: characters, except: [:created_at, :updated_at] 
         end
 
         def show
@@ -63,7 +63,31 @@ class CharactersController < ApplicationController
                 :hit_point_maximum,
                 :current_hit_points,
                 :temporary_hit_points,
-                :hit_dice)
+                :hit_dice,
+                :athletics,
+                :str_saving,
+                :dex_saving,
+                :acrobatics,
+                :sleight_of_hand,
+                :stealth,
+                :con_saving,
+                :int_saving,
+                :arcana,
+                :history,
+                :investigation,
+                :nature,
+                :religion,
+                :wis_saving,
+                :animal_handling,
+                :insight,
+                :medicine,
+                :perception,
+                :survival,
+                :cha_saving,
+                :deception,
+                :intimidation,
+                :performance,
+                :persuasion)
         end 
     
         def authorize
