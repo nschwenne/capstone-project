@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
-import SavingThrows from "./SavingThrows";
-import SkillModifier from "./SkillModifier";
+
 
 
 
@@ -34,34 +33,35 @@ const [skills, setSkills] = useState({
 const [id, setId] = useState("")
 
 useEffect(() => {
+    if (character.id) {
     setSkills({
-        str_saving: character.str_saving,
-        athletics: character.athletics,
-        dex_saving: character.dex_saving,
-        acrobatics: character.acrobatics,
-        sleight_of_hand: character.sleight_of_hand,
-        stealth: character.stealth,
-        con_saving: character.con_saving,
-        int_saving: character.int_saving,
-        arcana: character.arcana,
-        history: character.history,
-        investigation: character.investigation,
-        nature: character.nature,
-        religion: character.religion,
-        wis_saving: character.wis_saving,
-        animal_handling: character.animal_handling,
-        insight: character.insight,
-        medicine: character.medicine,
-        perception: character.perception,
-        survival: character.survival,
-        cha_saving: character.cha_saving,
-        deception: character.deception,
-        intimidation: character.intimidation,
-        performance: character.performance,
-        persuasion: character.persuasion
+        str_saving: character.str_saving || "",
+        athletics: character.athletics || "",
+        dex_saving: character.dex_saving || "",
+        acrobatics: character.acrobatics || "",
+        sleight_of_hand: character.sleight_of_hand || "",
+        stealth: character.stealth || "",
+        con_saving: character.con_saving || "",
+        int_saving: character.int_saving || "",
+        arcana: character.arcana || "",
+        history: character.history || "",
+        investigation: character.investigation || "", 
+        nature: character.nature || "",
+        religion: character.religion || "",
+        wis_saving: character.wis_saving || "",
+        animal_handling: character.animal_handling || "",
+        insight: character.insight || "",
+        medicine: character.medicine || "",
+        perception: character.perception || "",
+        survival: character.survival || "",
+        cha_saving: character.cha_saving || "",
+        deception: character.deception || "",
+        intimidation: character.intimidation || "",
+        performance: character.performance || "",
+        persuasion: character.persuasion || ""
            
     })
-    setId(character.id)
+    setId(character.id) }
 }, [character])
 
 function handleSave(e) {

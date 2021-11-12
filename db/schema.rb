@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_10_202032) do
+ActiveRecord::Schema.define(version: 2021_11_11_171517) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,10 +39,10 @@ ActiveRecord::Schema.define(version: 2021_11_10_202032) do
     t.integer "intelligence"
     t.integer "wisdom"
     t.integer "charisma"
-    t.string "background", default: ""
-    t.string "race", default: ""
-    t.string "alignment", default: ""
-    t.string "experience", default: ""
+    t.string "background"
+    t.string "race"
+    t.string "alignment"
+    t.string "experience"
     t.integer "temporary_hit_points"
     t.integer "current_hit_points"
     t.integer "hit_point_maximum"
@@ -74,6 +74,22 @@ ActiveRecord::Schema.define(version: 2021_11_10_202032) do
     t.integer "intimidation"
     t.integer "performance"
     t.integer "persuasion"
+  end
+
+  create_table "inventories", force: :cascade do |t|
+    t.integer "character_id"
+    t.integer "item_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.string "name"
+    t.string "cost"
+    t.string "description"
+    t.integer "weight"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "users", force: :cascade do |t|

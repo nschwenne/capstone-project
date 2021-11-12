@@ -1,6 +1,6 @@
 class CharactersController < ApplicationController
     before_action :authorize
-      
+        
 
         def index
             user = User.find_by(id: session[:user_id])
@@ -11,7 +11,7 @@ class CharactersController < ApplicationController
         def show
             user = User.find_by(id: session[:user_id])
             character = Character.find_by(character_params)
-            render json: character, except: [:created_at, :updated_at]  
+            render json: character, except: [:created_at, :updated_at], include: [inventories: {only: [:id], include: [item: {except: [:created_at, :updated_at]}]}]
         end
     
         def create
@@ -23,7 +23,7 @@ class CharactersController < ApplicationController
         rescue ActiveRecord::RecordInvalid => invalid
             render json: { errors: invalid.record.errors.full_messages }, status: :unprocessable_entity
         end 
-
+ 
         def destroy
             character = Character.find_by(id: params[:id])
             character.destroy

@@ -6,7 +6,7 @@ const modifier = Math.floor((score-10)/2)
 
 useEffect(() => {
  document.getElementById(`${id}`).innerHTML = modifier
-}, [modifier])
+}, [modifier, id])
 return (
 <div>
 <p id={id} className="placeholder">

@@ -15,6 +15,10 @@ Rails.application.routes.draw do
   
   resources :campaigns
 
+  resources :items
+
+  resources :inventories, only: [:index, :create, :destroy]
+
 
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!
