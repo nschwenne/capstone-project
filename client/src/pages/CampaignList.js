@@ -39,9 +39,9 @@ function CampaignList() {
                             ID: {campaign.id}
                             <br></br>
                             Characters: {(campaign.characters.map((character) => (
-                              <div>
+                              <span key={character.name}>
                                 {character.name}
-                              </div>
+                              </span>
                               
                             )))}
                         </p>

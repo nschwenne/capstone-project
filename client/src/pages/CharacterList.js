@@ -57,7 +57,7 @@ function setData(character) {
               ) : (
                   <div>
                       <h2>No Characters Found</h2> 
-                      <Link to="/new">Create New Character!</Link>
+                      <Link to="/newcharacter">Create New Character!</Link>
                   </div>    
               )}
           </div>

@@ -70,7 +70,7 @@ function Character() {
       <AbilityScores character={character} />
       <CharacterInfo character={character} />
       <Skills character={character} />
-      <Inventory character={character}/>
+      <Inventory character={character} />
     </div>
   );
 }

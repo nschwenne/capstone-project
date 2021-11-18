@@ -3,9 +3,9 @@ class InventoriesController < ApplicationController
   
 
     def create 
-     character = Character.find_by(id:)
+     character = Character.find_by(id: params[:character_id])
      inventory = character.inventories.create!(inventory_params)
-     render json: inventories, status: :created
+     render json: inventory, status: :created, include: [item: {except: [:created_at, :updated_at]}]
     rescue ActiveRecord::RecordInvalid => invalid
      render json: { errors: invalid.record.errors.full_messages }, status: :unprocessable_entity
     end

@@ -4,13 +4,10 @@ import { useHistory } from "react-router";
 function NewCharacter({ user }) {
  const [name, setName] = useState("");
  const [campaign_id, setCampaign_id] = useState("");
- const [errors, setErrors] = useState([]);
- const [isLoading, setIsLoading] = useState(false);
  const history = useHistory();
 
  function handleSubmit(e) {
     e.preventDefault();
-    setIsLoading(true);
     fetch("/characters", {
       method: "POST",
       headers: {
@@ -21,12 +18,7 @@ function NewCharacter({ user }) {
         campaign_id
       }),
     }).then((r) => {
-      setIsLoading(false);
-      if (r.ok) {
-        history.push("/");
-      } else {
-        r.json().then((err) => setErrors(err.errors));
-      }
+      history.push("/");
     });
   }
 

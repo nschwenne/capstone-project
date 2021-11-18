@@ -316,6 +316,3 @@ Item.create(name: "Warhammer", cost: "15gp", description: "1d8 bludgeoning, vers
 
 Item.create(name: "Whip", cost: "2gp", description: "1d4 slashing, finesse, reach", weight: 3)
 
-Inventory.create(character_id: 6, item_id: 106)
-
-Inventory.create(character_id: 6, item_id: 129)

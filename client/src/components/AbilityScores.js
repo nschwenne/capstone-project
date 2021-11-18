@@ -3,28 +3,28 @@ import AbilityScoreModifier from "./AbilityScoreModifier";
 
 function AbilityScores({ character }) {
   const [abilityScores, setAbilityScores] = useState({
-    strength: "",
-    dexterity: "",
-    constitution: "",
-    intelligence: "",
-    wisdom: "",
-    charisma: "",
+    strength: 10,
+    dexterity: 10,
+    constitution: 10,
+    intelligence: 10,
+    wisdom: 10,
+    charisma: 10,
   });
   const [id, setId] = useState("");
 
   useEffect(() => {
     if (character.id) {
       setAbilityScores({
-        strength: character.strength,
-        dexterity: character.dexterity,
-        constitution: character.constitution,
-        intelligence: character.intelligence,
-        wisdom: character.wisdom,
-        charisma: character.charisma,
+        strength: character.strength || abilityScores.strength,
+        dexterity: character.dexterity || abilityScores.dexterity,
+        constitution: character.constitution || abilityScores.constitution,
+        intelligence: character.intelligence || abilityScores.intelligence,
+        wisdom: character.wisdom || abilityScores.wisdom,
+        charisma: character.charisma || abilityScores.charisma,
       });
       setId(character.id);
     }
-  }, [character]);
+  }, [character, abilityScores.charisma, abilityScores.constitution, abilityScores.wisdom, abilityScores.intelligence, abilityScores.dexterity, abilityScores.strength]);
 
   function handleSave(e) {
     e.preventDefault();

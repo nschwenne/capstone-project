@@ -1,7 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 function NavBar({ user, setUser }) {
+
+  const history = useHistory();
 
     function handleLogout() {
         fetch("/logout", { method: "DELETE" }).then((r) => {
@@ -9,6 +11,8 @@ function NavBar({ user, setUser }) {
             setUser(null);
           }
         });
+        localStorage.clear()
+        history.push("/")
       }
 
      function handleDelete() {

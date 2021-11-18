@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react";
-import { Switch, Route, BrowserRouter } from "react-router-dom"
+import { Switch, Route, BrowserRouter} from "react-router-dom"
 import NavBar from "./NavBar";
 import Login from "../pages/Login";
 import NewCharacter from "../pages/NewCharacter";
@@ -7,6 +7,8 @@ import CharacterList from "../pages/CharacterList";
 import Character from "./Character";
 import NewCampaign from "../pages/NewCampaign";
 import CampaignList from "../pages/CampaignList";
+import Inventory from "./Inventory";
+import ItemPage from "./ItemPage";
 
 
 
@@ -27,16 +29,22 @@ return (
     <NavBar user={user} setUser={setUser}/>
     <Switch>
         <Route path='/newcharacter'>
-        <NewCharacter user={user}/>
+            <NewCharacter user={user}/>
         </Route>
         <Route path='/character'>
             <Character />
+        </Route>
+        <Route path='/inventory'>
+            <Inventory />
         </Route>
         <Route path="/newcampaign">
             <NewCampaign />
         </Route>
         <Route path="/campaignlist">
             <CampaignList />
+        </Route>
+        <Route path="/items">
+            <ItemPage />
         </Route>
         <Route path="/">
             <CharacterList/>
