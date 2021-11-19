@@ -40,8 +40,11 @@ function CampaignList() {
                             <br></br>
                             Characters: {(campaign.characters.map((character) => (
                               <span key={character.name}>
+                                <br></br>
                                 {character.name}
+                                
                               </span>
+                              
                               
                             )))}
                         </p>
