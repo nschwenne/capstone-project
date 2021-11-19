@@ -4,25 +4,31 @@ import { useHistory } from "react-router";
 function NewCampaign() {
     const [name, setName] = useState("");
     const [setting, setSetting] = useState("");
-
+    const [errors, setErrors] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
     const history = useHistory();
 
     function handleSubmit(e) {
-        e.preventDefault();
-        fetch("/campaigns", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            name,
-            setting
-          }),
-        }).then((r) => {
+      e.preventDefault();
+      setIsLoading(true);
+      fetch("/campaigns", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name,
+          setting
+        }),
+      }).then((r) => {
+        setIsLoading(false);
+        if (r.ok) {
           history.push("/campaignlist");
-          
-        });
-      }
+        } else {
+          r.json().then((err) => setErrors(err.errors));
+        }
+      });
+    }
     
 
 
